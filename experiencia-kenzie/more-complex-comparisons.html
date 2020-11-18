@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making coffee  with complex comparisons</title>
+</head>
+<body>
+
+    <script>
+
+        // milks 
+        let dairyMilk = true
+        let cream = false
+        let soyMilk = false 
+
+        //expresso
+        let caffeinatedExpresso = true
+        let decafExpresso = false 
+
+        // chocolates
+        let darkChocolate = false 
+        let milkChocolate = false 
+
+        /* Precedence order
+
+        ()
+        !
+        && 
+        ||
+
+        */
+
+        let isLatte = 
+            (dairyMilk || cream || soyMilk)
+        //  (true      || false || false  ) then (true || false) = (true || false) and finally we have final boolean result as true
+        &&
+            (caffeinatedExpresso || decafExpress)
+        //  (true                || false       ) that results in boolean  true 
+        && 
+            !(darkChocolate || milkChocolate);
+        //  !(false         || false        ) that results in boolean false. But following precedence order, we have that not false is equal to true
+
+
+        // let isLatte = 
+        //     true
+        // &&
+        //     true
+        // &&
+        //     true
+
+        if(isLatte) {
+            console.log('Enjoy your latté!');
+        } else {
+            console.log('Enjoy whatever it is you\'re drinking!');
+        }
+
+        
+    </script>
+    
+</body>
+</html>
