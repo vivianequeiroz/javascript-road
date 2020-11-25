@@ -10,9 +10,19 @@
     <script>
 
         // milks 
-        let dairyMilk = true
-        let cream = false
-        let soyMilk = false 
+        let dairyMilk;
+        let cream;
+        let soyMilk; 
+
+        let milk = prompt('What kind of milk is in your drink?' .toLowerCase());
+
+        if (milk === 'dairy'){
+            dairyMilk = true;
+        } else if (cream === 'cream') {
+            cream = true;
+        } else if (soyMilk === 'soy') {
+            soyMilk = true; 
+        }
 
         //expresso
         let caffeinatedExpresso = true
@@ -39,7 +49,7 @@
         //  (true                || false       ) that results in boolean  true 
         && 
             !(darkChocolate || milkChocolate);
-        //  !(false         || false        ) that results in boolean false. But following precedence order, we have that not false is equal to true
+        //  !(false         || falfse        ) that results in boolean false. But following precedence order, we have that not false is equal to true
 
 
         // let isLatte = 
@@ -49,12 +59,16 @@
         // &&
         //     true
 
+        let message
+
         if(isLatte) {
-            console.log('Enjoy your latté!');
+            message = 'Enjoy your latté!';
         } else {
-            console.log('Enjoy whatever it is you\'re drinking!');
+            message = 'Enjoy whatever it is you\'re drinking!';
         }
 
+        alert(message);
+        //document.write can be an option, with the content being added between of quotation marks. It accepts HTML tags!
         
     </script>
     
