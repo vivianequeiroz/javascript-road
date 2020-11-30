@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial; 
+            background: lightgreen;
+            color: black;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="area">
+        Interact!
+    </div>
+
+    <script>
+        var area = document.getElementById('area');
+        area.addEventListener('click', clicked);
+        area.addEventListener('mouseenter', enter);
+        area.addEventListener('mouseout', getOut);
+
+
+
+        function clicked() {
+            area.innerText = 'You\'ve clicked!';
+            area.style.background = 'green';
+        }
+
+        function enter() {
+            area.innerText = 'You\'ve entered!';
+        }
+
+        function getOut() {
+            area.innerText = 'You left!'
+            area.style.background = 'lightgreen';
+        }
+
+    </script>
+    
+</body>
+</html>
