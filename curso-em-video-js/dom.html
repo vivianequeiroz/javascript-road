@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background: rgb(99, 0, 99);
+            color: white;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Starting with DOM</h1>
+    <p><strong>What is it?</strong></p>
+    <p>Basically, each browser has a Document Object Model - DOM - built in it
+        since this technology supports the objects that describe a general document and it's own objects. 
+    </p>
+    <p>In this way, the DOM give the fundamental tools so that script languages and even HTML could be
+        used to create a web page as we know it. 
+    </p>
+    <p> It's very common to point a "DOM tree" to better understand the parenthood relation we observe
+        in DOM. 
+    </p>
+    <div id="msg">Click here!</div>
+
+    <script>
+        // windows can be omitted 
+        var corpo = window.document.body;
+        var p1 = window.document.getElementsByTagName('p')[1];
+        // window.alert(p1.innerText);
+        // selecionado por Marca 
+        // var d = window.document.getElementById('msg');
+        // d.style.background = 'green'; => the entire div gets green 
+        // d.innerText = 'Waiting...'
+        // selecionado por ID
+        // var c = window.document.getElementByName('msg')[1];
+        // d.innerText = 'Hello!';
+
+
+        // Recommended!
+
+        var d = window.document.querySelector('div.msg');
+        d.style.color = 'yellow';
+     </script>
+
+
+    
+</body>
+</html>
