@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where are you from?</title>
+</head>
+<body>
+    <h1>Inform us where are you from</h1>
+
+    <input type="text" name="Country_Name" id="country">
+    <input type="button" value="Verify" onclick="check()">
+
+    <div id="result"></div>
+
+    <script>
+        function check(){
+            var txtc = document.querySelector('input#country');
+            var result = document.querySelector('div#result');
+            var country = txtc.value; 
+
+           
+            if(country === 'Brasil'){
+                result.innerHTML += '<p>Nice, you\'re brazilian! Brazil is amazing! :D </p>';
+            } else { 
+            result.innerHTML += '<p>Great, you\'re a foreigner! We can\'t wait to hear more about your country! :3 </p>';
+            }
+            
+        }
+
+    </script>
+
+    
+</body>
+</html>

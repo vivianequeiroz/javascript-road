@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking traffic ticket</title>
+</head>
+<body>
+    <h1>Traffic ticket system</h1>
+
+    Car velocity: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verify" onclick="calculating()">
+
+    <div id="res"></div>
+
+    <script>
+        function calculating() {
+            var txtv = document.querySelector('input#txtvel');
+            var res = document.querySelector('div#res');
+            var vel = Number(txtv.value);
+
+            res.innerHTML = `<p>Your velocity is <strong> ${vel} Km/h</strong>.</p>`;
+
+            if(vel > 60) {
+                var exc = vel - 60;
+                res.innerHTML += `<p>You're <strong>FINED</strong> because you exceeded the velocity limit in <strong>${exc}</strong> Km/h.</p>`
+            }
+         
+            res.innerHTML += `<p><strong>Always drive with seatbelt.</strong></p>`;
+        }
+
+    </script>
+
+    
+</body>
+</html>
