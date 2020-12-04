@@ -18,21 +18,42 @@ function verify() {
             gender = 'um homem';
             if( age >= 0 && age < 5){
                 // bebe
-            } else if( age > 5 && age >= 10){ 
+                img.setAttribute('src', 'baby-boy.svg');
+            } else if( age > 5 && age <= 10){ 
                 // criança
+                img.setAttribute('src', 'child-boy.svg');
             } else if (age  < 20) {
                 // adolescente
+                img.setAttribute('src', 'teenager-boy.svg');
             } else if (age < 60) {
                 // adulto
-            } else ( age <= 60) {
+                img.setAttribute('src', 'adult-men.svg');
+            } else {
                 // idoso 
+                img.setAttribute('src', 'elder-men.svg');
             }
-// 17:05
 
         } else if(fsex[1].checked) {
             gender = 'uma mulher';
         }
+        if( age >= 0 && age < 5){
+            // bebe
+            img.setAttribute('src', 'baby-girl.svg');
+        } else if( age > 5 && age <= 10){ 
+            // criança
+            img.setAttribute('src', 'child-girl.svg');
+        } else if (age  < 20) {
+            // adolescente
+            img.setAttribute('src', 'teenager-girl.svg');
+        } else if (age < 60) {
+            // adulto
+            img.setAttribute('src', 'adult-women.svg');
+        } else {
+            // idoso 
+            img.setAttribute('src', 'elder-women.svg');
+        }
         res.style.textAlign = 'center';
-        res.innerHTML = `Detectamos ${gender} com ${age} anos.`
+        res.innerHTML = `Detectamos ${gender} com ${age} anos.`;
+        res.appendChild(img);
     }
 }
