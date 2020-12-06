@@ -21,7 +21,7 @@ for(let i in num ){ // for each position (i) inside variable num
 
 let pos = num.indexOf(76);
 if (pos == -1){  // -1 indicates that the value does not exist inside the array
-    console.log('O valor não existe nesse vetor');
+    console.log('O valor não existe nesse vetor ');
 } else { 
     console.log(`O valor está na posição ${pos}`);
 }
