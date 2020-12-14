@@ -44,5 +44,9 @@ const date = {
     year: '2018',
 }
 
-date.day = 29;
+date.day = 29; // it works while it is an object 
+// date = 'January'; it does not work because a different data type is trying to be added
+
+
+// LET - equal to const with the difference that allows a value modification of a variable
 
