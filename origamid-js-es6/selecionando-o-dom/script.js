@@ -1,34 +1,42 @@
-// Types of selection 
-// 1. By ID
+//EXERCISES
 
-const animais = document.getElementById('animais');
-console.log(animais);
+// 1. Return in console all the images from the site // CERTAIN ABOUT IT
 
-//2. By TAG and CLASS - both of them automatically update elements that can be later added
+const imagens = document.getElementsByTagName('img');
+console.log(imagens);
 
-const gridSection = document.getElementsByClassName('grid-section');
-const contato = document.getElementsByClassName('grid-section contato'); // it only selects those grid sections that necessarily have contato as well
 
-const ul = document.getElementsByTagName('ul');
+// 2. Return in console all the images that begin with the word "imagem" // NO IDEA
 
-// Both of them above return a HTMLCollection 
+const imagensAnimais = document.querySelectorAll('[srcˆ="./css/img/imagem"]') // ('CSS-Selector[attribute ^ (that indicates how it needs to begin)="attribute itself"]');
+console.log(imagensAnimais);
 
-console.log(gridSection[2]); // => array-like
 
-//3. Universal General Selector
+// 3. Select all the intern links (those that href begins with #); //HAVE AN IDEA
 
-// querySelector is going to return the first element that com matches with the CSS selector
+const linksInternos = document.querySelectorAll('[hrefˆ="#"]');
+console.log(linksInternos);
 
-const animais = document.querySelector('.animais');
-const contato = document.querySelector('#contato');
-const ultimoItem = document.querySelector('.animais0lista li:last-item');
-const linkCSS = document.querySelector('[hrefˆ="https://"]');
-const primeiroUl = document.querySelector('ul');
 
-// Searching - only - inside of the Ul previously declared
-const navItem = primeiroUl.querySelector('li'); 
+// 4. Select the first h2 inside the .animais-descricao // HAVE AN IDEA
 
-// querySelectorAll is going to select all the elements at the html - it returnos a NodeList (has methods and properties that HTML does not has). STATICS, if something new is added, it will be not updated
+const primeiroH2 = document.querySelector('.animais-descricao h2');
+console.log(primeiroH2);
 
-const animaisImg = document.querySelectorAll('.animais img');
-console.log('animaisImg[0]');
+// AN ALTERNATIVE: 
+
+const animaisDescricao = document.querySelector('.animais-descricao'); 
+const totalH2 = animaisDescricao.querySelector('h2');
+
+console.log(animaisDescricao);
+console.log(totalH2);
+
+
+// 5. Select the last p tag from the site // HAVE AN IDEA  
+
+// const ultimoP = document.querySelector('.copy p'); // NOT THE BEST WAY
+// console.log(ultimoP);
+
+const paragrafos = document.querySelectorAll('p');
+console.log(paragrafos[--paragrafos.length]); // it is equal to console.log(paragrafos[paragrafos.length - 1])
+
