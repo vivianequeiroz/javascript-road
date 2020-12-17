@@ -16,7 +16,7 @@
 //     // console.log(item, index, array);
 // });
 
-// forEach is an Array method and some objects array0like have it. 
+// forEach is an Array method and some objects array-like have it. 
 // However, when an objects does not have forEach method, it can be
 // transformed into an Array:
 
