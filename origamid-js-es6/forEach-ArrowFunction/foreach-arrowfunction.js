@@ -17,7 +17,7 @@
 // });
 
 // forEach is an Array method and some objects array-like have it. 
-// However, when an objects does not have forEach method, it can be
+// However, when an object does not have forEach method, it can be
 // transformed into an Array:
 
 // const titulos = document.getElementsByClassName('titulo'); // it return HTMLCollection
