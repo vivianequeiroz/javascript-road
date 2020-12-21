@@ -24,6 +24,10 @@ body {
     background: teal;
 }
 
+html.textomaior {
+    font-size: 110%;
+}
+
 .menu {
     grid-column: 3 / 5;
     margin-top: 2rem;

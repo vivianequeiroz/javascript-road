@@ -1,107 +1,76 @@
-//  // ********************     Events    ********************
+// EXERCISES
 
-// // ------------------------------------------------------------------------
+// 1. When the user click at the intern links of the site, 
+// add a class 'ativo' at the item clicked and remove from
+// the other items in case it already has it. Prevent the 
+// standard behavior from these links  // HAVE A SIMPLE IDEA
 
-// // Events add a function called 'callback' into an element 
-// // it will be activated at the momento that an specific event occur
-// // at this element
+//WRONG ATTEMPTS
+//  const linksInternos = document.querySelectorAll('a[hrefˆ="https"]');
+
+//  function callbackLinks(event) {
+//      event.preventDefault();
+//      event.addClassList('ativo');
+//  }
+
+//  linksInternos.forEach(item, () => {
+//     item.addEventListener('click', callbackLinks);
+//  });
+
+//  console.log(linksInternos);
 
 
-// const img = document.querySelector('img');
+//CORRECT ANSWER
 
+// const linksInternos = document.querySelectorAll('a[href=ˆ"#"]');
 
-// //element.addEventListener(event, callback, options)
-// img.addEventListener('click', function() {
-//     console.log('Clicou!');
+// function handleLink(event) {
+//     event.preventDefault();
+//     linksInternos.forEach((link) => {
+//         link.classList.remove('ativo');
+//     });
+//     event.currentTarget.classList.add('ativo');
+// }
+
+// linksInternos.forEach((link) => {
+//     link.addEventListener('click', handleLink);
 // });
 
-// // third parameter is optional
 
 
-// // It is a good practice to separate the callback function from the
-// // addEventListener by declaring an function before:
 
-// const img = document.querySelector('img');
 
-// function callback() {
-//     console.log('Clicou!');
+// 2. Select all the elements from the site starting from the body
+// and when it is clicked, display which elements that are being selected
+
+const totalElements = document.querySelectorAll('body *');
+
+function handleElemento(event) {
+    console.log(event.currentTarget);
+}
+
+
+totalElements.forEach((elemento) => {
+    elemento.addEventListener('click', handleElemento);
+});
+
+
+//Now, instead of using console, remove the element that is being selected
+
+
+// function handleElemento(event) {
+//     event.currentTarget.remove();
 // }
 
-// img.addEventListener('click', callback); // this is the correct way
-// // img.addEventListener('click', callback()); // it will result in 'undefined' 
-// // a anonymous functions make it hard to debug the code 
 
 
-// const animaisLista = document.querySelector('.animais-lista');
-
-// function animaisCallback(event){
-//     const currentTarget = event.currentTarget; // returns the entire element
-//     const target = event.addEventListener; // returns exactly where the event ocurred
-//     const type = event.type; // returns a string with the event type
-//     const path = event.path;
-//     console.log(currentTarget, target, type, path); 
-// }
-
-// animaisLista.addEventListener('click', animaisCallback);
+//And, is the user click on 't', increase the font size from the site.
 
 
-// //event.preventDefault()
-
-// // It is a method that prevents the browser's standard behavior 
-
-// const linkExterno = document.querySelector('a[hrefˆ="http"]');
-
-// function clickNoLink(event){
-//     event.preventDefault();
-//     console.log(event.currentTarget.href);
-// }
-
-// linkExterno.addEventListener('click', clickNoLink);
-
-
-// // this
-// // In events, it references the element in which the addEventListener was added
-// // In general, it is equal to event.currentTarget:
-
-// const linkExterno = document.querySelector('a[hrefˆ="http"]');
-
-// function clickNoLink(event){
-//     event.preventDefault();
-//     console.log(this);
-//     console.log(evenet.currentTarget);
-// }
-
-// linkExterno.addEventListener('click', clickNoLink);
-
-// //There are a lot of events as click, scroll, resize, keydown, keyup, mouseenter, etc.
-// // Events can be added into different elements, as windows and document as well
-
-// const h1 = document.querySelector('h1');
-
-// function callback(event) {
-//     console.log(event.tye, event);
-// }
-
-// h1.addEventListener('click', callback);
-// h1.addEventListener('mouseenter', callback);
-// window.addEventListener('scroll', callback);
-// window.addEventListener('resize', callback);
-// window.addEventListener('keydown', callback);
-
-
-
-
-//Keyboard - events that helps with the navigation at the site
-
-function handleKeyboard(event) {
-    if(event.key === 'a') {
-        document.body.classList.toggle('azul');
+function handleClickT(event){
+    if(event.key === 't') {
+        document.documentElement.classList.toggle('textomaior');
     }
 }
 
-window.addEventListener('keydown', handleKeyboard);
-
-
-
-
-
+window.addEventListener('keydown', handleClickT);
