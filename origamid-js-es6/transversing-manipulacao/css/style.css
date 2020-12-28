@@ -20,14 +20,6 @@ body {
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
-.azul {
-    background: teal;
-}
-
-html.textomaior {
-    font-size: 110%;
-}
-
 .menu {
     grid-column: 3 / 5;
     margin-top: 2rem;
@@ -223,10 +215,4 @@ html.textomaior {
     .copy {
         margin-bottom: 0px;
     }
-
-
-
-    /* Locais */
-
-    
 }
