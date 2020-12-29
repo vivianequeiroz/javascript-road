@@ -3,19 +3,20 @@
 // // ------------------------------------------------------------------------
 
 // // Events add a function called 'callback' into an element 
-// // it will be activated at the momento that an specific event occur
-// // at this element
+// // it will be activated at the moment that an specific event occur
+// // in this element
 
 
 // const img = document.querySelector('img');
 
 
-// //element.addEventListener(event, callback, options)
+// element.addEventListener(event, callback, options) => template
+
 // img.addEventListener('click', function() {
 //     console.log('Clicou!');
 // });
 
-// // third parameter is optional
+// the third parameter is optional
 
 
 // // It is a good practice to separate the callback function from the
@@ -28,8 +29,8 @@
 // }
 
 // img.addEventListener('click', callback); // this is the correct way
-// // img.addEventListener('click', callback()); // it will result in 'undefined' 
-// // a anonymous functions make it hard to debug the code 
+// // img.addEventListener('click', callback()); // it will result in 'undefined' due to ()
+// // a anonymous function makes it hard to debug the code! 
 
 
 // const animaisLista = document.querySelector('.animais-lista');
@@ -38,7 +39,7 @@
 //     const currentTarget = event.currentTarget; // returns the entire element
 //     const target = event.addEventListener; // returns exactly where the event ocurred
 //     const type = event.type; // returns a string with the event type
-//     const path = event.path;
+//     const path = event.path; // returns the path to the event 
 //     console.log(currentTarget, target, type, path); 
 // }
 
@@ -47,7 +48,7 @@
 
 // //event.preventDefault()
 
-// // It is a method that prevents the browser's standard behavior 
+// // It is a method that prevents the browser's standard behaviors 
 
 // const linkExterno = document.querySelector('a[hrefˆ="http"]');
 
@@ -59,8 +60,8 @@
 // linkExterno.addEventListener('click', clickNoLink);
 
 
-// // this
-// // In events, it references the element in which the addEventListener was added
+// // Use of "this"
+// // In events, "this" references the element in which the addEventListener was added
 // // In general, it is equal to event.currentTarget:
 
 // const linkExterno = document.querySelector('a[hrefˆ="http"]');
@@ -79,7 +80,7 @@
 // const h1 = document.querySelector('h1');
 
 // function callback(event) {
-//     console.log(event.tye, event);
+//     console.log(event.type, event);
 // }
 
 // h1.addEventListener('click', callback);
