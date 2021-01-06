@@ -1,5 +1,5 @@
 function isTruthy(data) {
-    return !!data; // !! to verify is a value is truthy or false
+    return !!data; // !! to verify if it is a value is truthy or false
 }
 
 // calc of square perimeter

@@ -1,6 +1,6 @@
 function imc(weight, height) { // parameters
     imc = weight / (height ** 2);
-    return imc
+    return imc;
 }
 
 console.log(imc(63, 1.68)); // arguments 
