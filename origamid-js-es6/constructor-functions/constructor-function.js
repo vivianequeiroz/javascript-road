@@ -54,7 +54,7 @@ function Moradia(cidadeAtribuida, cepAtribuido) {
 const casa = new Moradia('São Paulo', 05654542);
 const apto = new Moradia('Rio de Janeiro', 0657340);
 
-// Variable inside constructors are  
+// Variable inside constructors are 'invisible'
 
 
 //    const Dom = {
