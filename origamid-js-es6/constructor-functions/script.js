@@ -1,55 +1,23 @@
-// Constructor functions make it possible to create new different objects but with 
-// the same characteristics
+// EXERCISES
 
- // Pascal Case identify a constructor function => function Carro () { ... }
+//1. Transform the object below into an Constructor Function:
 
- function Carro() {
-    this.marca = 'Marca';
- }
-
-//  const honda1 = Carro();
-
- // it returns undefined
-
-
- const honda = new Carro();
- const fiat = new Carro();
- fiat.marca = 'Fiat';
-
- // the addition of -- new -- turns the constant into an object of the type Carro() 
- // Carro() {...} is the constructor function
- // this returns the constructor itself
-
-
- // How --- new --- works:
-
- //1. First, it creates a new object 
- //=> honda = {}
-
- //2. Then, defines a prototype based on the constructor function
- //=> honda.prototype = Carro.prototype
-
- //3. Indicates the variable this to the object
- //=> this = honda
-
- //4. Executes a function, replacing 'this' with the object
- //=>honda.marca = 'Marca';
- //=>honda.preco = 0;
-
- //5. It returns the new object 
- //=> return honda = {
-//      marca: 'Marca',
-//      preco: 0,
-//  }
-
-
-
-// Parameters andarguments can be used at the moment of an object creation:
-
-function Moradia(cidadeAtribuida, cepAtribuido) {
-    this.cidade = cidadeAtribuida; // 'this.' creation of a new property of object!
-    this.cep = cepAtribuido
+const pessoa = { 
+    nome: 'Nome pessoa',
+    idade: 0,
+    andar() {
+        console.log(this.nome + ' andou');
+    }
 }
 
-const casa = new Moradia('São Paulo', 05654542);
-const apto = new Moradia('Rio de Janeiro', 0657340);
+
+// 2. Create 3 persons. João - 20 years old, Maria - 25 years old and Bruno - 15 years old
+
+
+
+//3. Create a Constructor Function (Dom) for the manipulation of elements lists from dom.
+// It should have the following properties and methods: 
+
+// elements, returns NodeList with the selected elements
+// addClass(classe), add a class to all the elements/
+// removeClass(classe), remove the class from all the elements
