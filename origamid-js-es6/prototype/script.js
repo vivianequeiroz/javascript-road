@@ -4,7 +4,7 @@
 
 // This mechanism provides heritage!
 
-// So prototype is an object added into a function when it is created
+// So, prototype is an object added into a function when it is created
 
 function Pessoa(nome, idade) {
     this.nome = nome,
@@ -34,3 +34,18 @@ const viviane = new Pessoa('Viviane', 20);
 
 console.log(Pessoa.prototype);
 console.log(viviane.prototype);
+
+
+// Prototype heritage
+
+// The object has access to the method and properties 
+// from the constructor prototype responsible for the 
+// creation of this object. The object below has
+// access to methods that were never defined, however,
+// that was inherited from the Object prototype:
+
+Object.prototype;
+
+viviane.toString();
+viviane.isPrototypeOf();
+viviane.valueOf();
