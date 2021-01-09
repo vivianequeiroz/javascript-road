@@ -75,8 +75,7 @@ function Dom(seletor) {
             element.classList.add(classe);
         });
     }
-    this.removeClass = 
-    function(classe) {
+    this.removeClass = function(classe) {
         elementList.forEach((element) => {
             element.classList.remove(classe);
         });
