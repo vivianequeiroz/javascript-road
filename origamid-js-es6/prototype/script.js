@@ -1,117 +1,68 @@
-// Prototype chain is a JS mechanism to verify if the object has the property/method itself.
-// if it hasn't, it goes to the next prototype link (data type verifyed) and search
-// for the property/method inside it
+// EXERCISES
 
-// This mechanism provides heritage!
+// 1. Create a consstructor function of Pessoa
+// It may contain nome, sobrenome and idade
+              // HAS AN IDEA
+// Create a method in the prototype that returns
+// the full name of the person 
+             // NO IDEA
 
-// So, prototype is an object added into a function when it is created
-
-function Pessoa(nome, idade) {
+function Pessoa(nome, sobrenome, idade) {
     this.nome = nome,
-    this.idade = idade,
-    this.abraçar = function() {
-        return 'Abraçou';
-    }
-    this.andar = function() {
-        return 'Andou pelo objeto';
-    }
+    this.sobrenome = sobrenome,
+    this.idade = idade
 }
 
-var obj = {
-    nome: 'João',
-    idade: 20,
+Pessoa.prototype.nomeCompleto = function() {
+    return `${this.nome} ${this.sobrenome}`;
 }
 
-Pessoa.prototype.andar = function() {
-    return this.nome + ' pessoa andou';
-}
 
-Pessoa.prototype.nada = function() {
-    return this.nome + ' pessoa nadou';
-}
-
-const viviane = new Pessoa('Viviane', 20);
-
-console.log(Pessoa.prototype);
-console.log(viviane.prototype);
-
-
-// Prototype heritage
-
-// The object has access to the method and properties 
-// from the constructor prototype responsible for the 
-// creation of this object. The object below has
-// access to methods that were never defined, however,
-// that was inherited from the Object prototype:
-
-Object.prototype;
-
-viviane.toString();
-viviane.isPrototypeOf();
-viviane.valueOf();
+const viviane = new Pessoa('Viviane', 'Queiroz', 20);
 
 
 
 
- // Native constructors
-
- // Constructors are functions used to build objects, functions
- // strings and other data types. They had a prototype with 
- // properties and methods that can be accessed accordingly to
- // data type 
-
- // Example: When we creat a variable that receives a string,
- // the constructor of a String allow us to access 
- // many properties and methods available in this data type:
-
- const pais = 'Brasil';
-
- console.log(pais.charAt(0)); // returns the letter at the first 
-                              // at the first position of the
 
 
+// 2. List the accessed methods by the data
+// created with NodeList, HTMLCollection, Document      // NO IDEA
+
+// At console: 
+
+// NodeList.prototype;
+// HTMLCollection.prototype;
+// Document.prototype;
+
+// Alternative: 
+
+Object.getOwnPropertyNames(NodeList.prototype);
+Object.getOwnPropertyNames(HTMLCollection.prototype);
+Object.getOwnPropertyNames(Document.prototype);
+
+// Document - constructor function
+// document - object constructed 
 
 
-// It is very common to transform a list into an Array, since
-// a normal list usually has a Nodelist as it's constructor
-// and by the time it is turned into an Array, the list 
-// is going to has access to a wider range of methods 
-// and properties
+// 3. List the constructors from the data below: 
 
-const lista = document.querySelectorAll('li');
-
-const listaArray = Array.prototype.slice.call(lista);
-// most recent  method: 
-// consta listaArray = Array.from(lista);
+const li = document.querySelector('li');
 
 
-
-// Only the methods from a prototypes are inherited!
-
-[1,2,3].slice(); // exist
-[1,2,3].from(); // does not exist
+li; // li.constructor.name -> HTMLLIElement
+li.click; // li.click.constructor.name -> Function
+li.innerText; // li.innerText.constructor.name -> String
+li.value; // li.value.constructor.name -> Number
+li.hidden; // li.hidden.constructor.name -> Boolean
+li.offsetLeft; // li.offsetLeft.constructor.name -> Number       
+li.click(); // li.click().constructor.name -> undefined             
 
 
 
-// Always observe what has been  r e t u r n e d! 
-// It will confirm which methods and properties can be accessed.
+//4. What is the csontructor of the data below?
 
-const Carro = {
-    marca: 'BMW',
-    preco: 100000,
-    acelerar() {
-        return true;
-    }
-}
+// li.hidden.constructor.name; // s t r i n g 
 
-// In this example, the return of what can be called is:
+const teste = li.hidden.constructor.name;
 
-// Carro => Object 
-// Carro.marca => String
-// Carro.preco => Number
-// Carro.acelerar => Function  ***
-// Carro.acelerar() => Boolean ***
-// Carro.marca.charAt => Function
-// Carro.marca.charAt(0) => String
-
-// To verify constructor name:    .constructor.name
+// teste.constructor.name => "String"
