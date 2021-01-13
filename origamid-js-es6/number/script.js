@@ -1,37 +1,38 @@
-console.log(Number.isNaN('ds'));
-console.log(Number.isInteger(10.4343));
+// EXERCISES
 
-console.log(Number.parseFloat('234.32'));
-console.log(Number.parseInt('234.32'));
+// 1. Return a random number between 1050 and 2000
 
-const preco = 10.3423;
-console.log(preco.toFixed(2)); // string, to transform into number add + 
-
-// new.toString(radix) => transform the data into a string
-
-let valor = 50.50;
-
-valor = valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-console.log(valor);
+console.log(Math.floor(Math.random() * (2000 - 1050 + 1)) + 1050);
 
 
-console.log(Math.PI);
+// 2. Return the greatest value of the list below 
 
-// Some of the most commom methods of the object Math:
+const numeros = '4, 5, 22, 8, 9';
 
+const arrayLista = numeros.split(', ');
+console.log(arrayLista);
 
-console.log(Math.abs( -4.5));
-console.log(Math.ceil( 4.5)); // => round up
-console.log(Math.floor( 4.5)); // => round down
-console.log(Math.round( 4.5)); // => round accordingly to math rules
+const arrayNumeros = Math.max(...arrayLista); // spread operator
 
-console.log(Math.max(3,54,354,23,345,67,454,4));
-console.log(Math.min(3,54,354,23,345,67,454,4));
+console.log(arrayNumeros);
 
-const numeroAleatorio = Math.floor(Math.random() * 1000);
+ 
+//3. Create a function to clean the prices
+// and return the numbers with cents rounded 
+// then return the total sum
 
-console.log(numeroAleatorio);
+const listaPrecos = ['R$ 59,99', 'R$ 100,222',
+                     'R$ 230  ', 'r$ 200'];
 
-// To calculate a random number with an interval 
+function limparPreco(preco){
+    preco = +preco.toUpperCase().replace('R$', '').trim().replace(',', '.');
+    preco = +preco.toFixed(2);
+    return preco;
+}
 
-console.log(Math.floor(Math.random() * (40 - 20 + 1)) + 20);
+let soma = 0;
+listaPrecos.forEach((preco) =>{
+    soma += limparPreco(preco);
+})
+
+console.log(soma.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}));
