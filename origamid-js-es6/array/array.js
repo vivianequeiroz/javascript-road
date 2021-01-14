@@ -88,7 +88,7 @@ console.log(cores.pop()); // removes the last item and it is the return
 
 
 
-//array.rever();
+//array.reverse();
 
 console.log(cores.reverse()); // inversion of array items
 
