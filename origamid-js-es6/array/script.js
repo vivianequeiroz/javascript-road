@@ -8,10 +8,10 @@ const moveis = Array.of('Sofa', 'Estante', 'Cama');
 const carros = new Array('Corola', 'Mustang', 'Honda');
 const frutas = Array('Pêra', 'Banana', 'Uva');
 
-carros[1] // return Mustang;
-carros[2] = 'Ferrari' // substitute the item from the third position in the array
-carros[10] = 'Parati'; // insert the string in the tenth position
-console.log(carros.length);
+// carros[1] // return Mustang;
+// carros[2] = 'Ferrari' // substitute the item from the third position in the array
+// carros[10] = 'Parati'; // insert the string in the tenth position
+// console.log(carros.length);
 
 // The values in an array are not static!
 
@@ -82,3 +82,38 @@ console.log(cores.pop()); // removes the last item and it is the return
 //array.rever();
 
 console.log(cores.reverse()); // inversion of array items
+
+
+//array.splice(index, remove, items);
+
+const carros2 = [ 'Ford', 'Fiat', 'VW', 'Honda'];
+carros2.splice(1, 0, 'Kia', 'Mustang'); // returns []
+console.log(carros); // ['Ford', 'Kia', 'Mustang', 'Fiat', 'VW', 'Honda'];
+
+// [ ].splice(index that indicates where the values will start to be added, 
+//            remove of the total amount given in the second parameter)
+
+carros.splice(3, 2, 'Ferrari'); // ['Fiat', 'VW'] => they are after the addition of 'Ferrari' and correspond to the two removes indicated at the second parameter
+
+console.log(carros); // ['Ford', 'Kia', 'Mustang', 'Ferrari', 'Honda'];
+
+
+
+//array.copyWithin(target, where it will begin to copy, ultil where it will copy);
+
+console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].copyWithin(2, 0, 2));
+
+console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].copyWithin(-1)); // a negative number makes it starts the substitution from the end
+
+
+
+//arary.fill(value that will replace the items, index of where it will begin the replace, index of where the replace stops)
+
+
+
+console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor'));
+console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor', 2));
+console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor', 1, 3));
+
+
+
