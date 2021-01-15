@@ -114,3 +114,78 @@
 
 
 
+// const aulas = [     
+//     {
+//         nome: 'HTML 1',
+//         min: 15
+//     },
+//     {
+//         nome: 'HTML 2',
+//         min: 10
+//     },
+//     {
+//         nome: 'CSS 1',
+//         min: 20
+//     },
+//     {
+//         nome: 'JS 1',
+//         min: 25
+//     },
+// ]
+
+// const listaAulas = aulas.reduce((acumulator, aula, index) => { // aula === item
+//     acumulator[index] = aula.nome;
+//     return acumulator;
+// }, {});
+
+// How the reduce method create this object: 
+
+// //1.
+// aulas.reduce(({}, {nome: 'HTML 1', min: 15}, 0) => {
+//     {}[0] = 'HTML 1';
+//     return {0: 'HTML 1'};
+// }, {});
+
+// //2.
+// aulas.reduce(({0: 'HTML 1'}, {nome: 'HTML 2', min: 10}, 1) => {
+//     {0: 'HTML 1'}[1] = 'HTML 2';
+//     return {0: 'HTML 1', 1: 'HTML 2'};
+// }, {});
+
+// //3.
+// aulas.reduce(({0: 'HTML 1', 1: 'HTML 2'}, {nome: 'CSS 1', min: 20}, 2) => {
+//     {0: 'HTML 1', 1: 'HTML 2'}[2] = 'CSS 1';
+//     return  {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'};
+// }, {});
+
+// //4.
+// aulas.reduce(({0: 'HTML 1', 1: 'HTML 2', 3: 'CSS 1'}, {nome: 'JS 1', min: 25}, 3) => {
+//     {0: 'HTML 1', 1: 'HTML 2', 3: 'CSS 1'}[3] = 'JS 1';
+//     return {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1', 3: 'JS 1'};
+// }, {});
+
+
+
+// [].reduceRight ==> iteration occurs from right to left!
+
+
+// [].some(); ==> if AT LEAST ONE return is truthy, returns true 
+const frutas = ['Banana', 'Pêra', 'Uva']; 
+
+const temUva = frutas.some((item) => {
+    console.log(item);
+    return item === 'Uva';
+}); 
+
+
+
+
+// [].every(); ==> if ALL the returns are truthy, returns true. If at least one of it is falsy, returns false
+
+
+const numeros = [3,3,3,2];
+
+const maiorQue3 = numeros.every( n => n > 3);
+console.log(maiorQue3);
+
+//reduceRight, some and every
