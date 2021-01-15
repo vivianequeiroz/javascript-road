@@ -78,24 +78,24 @@
 
 
 
-// .REDUCE returns a UNIQUE value of the final iteration - it has an acumulator
-// If the acumulator is not defined, the method will consider it as the first item
+// [].REDUCE returns a UNIQUE value of the final iteration - it has an accumulator
+// If the accumulator is not defined, the method will consider it as the first item
 // It decreases 1 iteration:
 
 // const aulas = [10, 25, 30];
 
-// const reduceAulas = aulas.reduce((acumulator, item) => {
-//     console.log(acumulator, item);
-//     return acumulator + item;
+// const reduceAulas = aulas.reduce((accumulator, item) => {
+//     console.log(accumulator, item);
+//     return accumulator + item;
 // });
 
 // console.log(reduceAulas);
 
-// // But when defined, it will iteract the exat same ammount of items in the array
+// But when defined, it will iterate the exact same amount of items in the array
 
-// const reduceAulas2 = aulas.reduce((acumulator, item) => {
-//     console.log(acumulator, item);
-//     return acumulator + item;
+// const reduceAulas2 = aulas.reduce((accumulator, item) => {
+//     console.log(accumulator, item);
+//     return accumulator + item;
 // }, 0);
 
 // console.log(reduceAulas2);
@@ -133,9 +133,9 @@
 //     },
 // ]
 
-// const listaAulas = aulas.reduce((acumulator, aula, index) => { // aula === item
-//     acumulator[index] = aula.nome;
-//     return acumulator;
+// const listaAulas = aulas.reduce((accumulator, aula, index) => { // aula === item
+//     accumulator[index] = aula.nome;
+//     return accumulator;
 // }, {});
 
 // How the reduce method create this object: 
@@ -169,13 +169,13 @@
 // [].reduceRight ==> iteration occurs from right to left!
 
 
-// [].some(); ==> if AT LEAST ONE return is truthy, returns true 
-const frutas = ['Banana', 'Pêra', 'Uva']; 
+// // [].some(); ==> if AT LEAST ONE return is truthy, returns true 
+// const frutas = ['Banana', 'Pêra', 'Uva']; 
 
-const temUva = frutas.some((item) => {
-    console.log(item);
-    return item === 'Uva';
-}); 
+// const temUva = frutas.some((item) => {
+//     console.log(item);
+//     return item === 'Uva';
+// }); 
 
 
 
@@ -183,9 +183,69 @@ const temUva = frutas.some((item) => {
 // [].every(); ==> if ALL the returns are truthy, returns true. If at least one of it is falsy, returns false
 
 
-const numeros = [3,3,3,2];
+// const numeros = [3,3,3,2];
 
-const maiorQue3 = numeros.every( n => n > 3);
-console.log(maiorQue3);
+// const maiorQue3 = numeros.every( n => n > 3);
+// console.log(maiorQue3);
 
-//reduceRight, some and every
+
+
+
+// [].findIndex() ==> returns the value of the first iteration that returns true
+// [].find() ==> returns the index of the first iteration that returns true
+
+// const numerosMaior3 = numeros.findIndex(n => n > 1);
+// console.log(numerosMaior3);
+
+// const numerosMaior2 = numeros.find(n => n > 1);
+// console.log(numerosMaior3);
+
+
+
+
+
+
+// [].filter(); ==> returns an array with a list of the values that returned true
+
+
+const numeros = [ 45,65,6,3,42,5,76,44,6456,67,4343,54,657,6,53,432,4243]
+
+
+const buscaMaior200 = numeros.filter(n => n > 200);
+
+
+
+const aulas = [     
+    {
+        nome: 'HTML 1',
+        min: 15
+    },
+    {
+        nome: 'HTML 2',
+        min: 10
+    },
+    {
+        nome: 'CSS 1',
+        min: 20
+    },
+    {
+        nome: 'JS 1',
+        min: 25
+    },
+]
+
+
+const aulasMaiores15 = aulas.filter((aula) => {
+    return aula.min > 15;
+});
+
+console.log(aulasMaiores15);
+
+
+
+
+
+
+// find and findIndex, filter
+
+
