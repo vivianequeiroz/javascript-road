@@ -1,181 +1,251 @@
-// *** Construction of arrays *** 
+// .forEach(callback(actualItem, index, array))
 
-// Every array inherit the properties and methods from the prototype of the constructor Array
+// const carros = ['Ford', 'Fiat', 'Honda']
+// carros.forEach((item, index, array) => {
+//     console.log(item, index, array);
+// });
 
-// 
-const numeros = Array[4] // if any other arguments are inserted, it will be created a empty array with [n] spaces 
-const moveis = Array.of('Sofa', 'Estante', 'Cama');
-const carros = new Array('Corola', 'Mustang', 'Honda');
-const frutas = Array('Pêra', 'Banana', 'Uva');
+// If array is modified, it will also change the original array 
 
-// carros[1] // return Mustang;
-// carros[2] = 'Ferrari' // substitute the item from the third position in the array
-// carros[10] = 'Parati'; // insert the string in the tenth position
-// console.log(carros.length);
+// FOREACH always return UNDEFINED
 
-// The values in an array are not static!
 
 
-const li = document.querySelectorAll('li');
-const arrayLi = Array.from(li);
 
-console.log(arrayLi);
 
-// In order to be properly transformed into an array,
-// an object needs to have the property length declared inside it:
 
-const obj = {
-    0: 'Viviane',
-    1: 'João',
-    2: 'Vida',
-    length: 3 // in case of a not accurate number, it will return 'undefined'
-}
+// .MAP works as .forEach but it's returns is A NEW ARRAY with the updated values 
+// from the return of each iteration 
 
-const arrayObj = Array.from(obj);
-console.log(arrayObj)
+// const carros = ['Ford', 'Fiat', 'Honda']
 
+// const novaArray = carros.map((item, index, array) => {
+//     return item.toUpperCase();
+// });
 
-// Verify if it is an Array: 
+// console.log(novaArray);
 
-console.log(Array.isArray(li));
-console.log(Array.isArray(arrayLi));
+// // carros remains untouchable 
 
+// console.log(carros);
 
-// ------------------------------------------------------------------------------------------
+// const numeros = [2, 4, 3 , 6, 75, 43]; 
 
+// const numerosX2 = numeros.map(n => n * 2);
 
+// console.log(numerosX2);
 
+// // .map requires a return, if it has not, the return is going to be UNDEFINED 
 
 
 
 
+// const aulas = [     
+//     {
+//         nome: 'HTML 1',
+//         min: 15
+//     },
+//     {
+//         nome: 'HTML 2',
+//         min: 10
+//     },
+//     {
+//         nome: 'CSS 1',
+//         min: 20
+//     },
+//     {
+//         nome: 'JS 1',
+//         min: 25
+//     },
+// ]
 
-// *** Mutator methods modifies an array ***
+// *** In this example, 'aula' needs to be an object to properly work as a callback in the .map method
 
-//array.sort();
+// const tempoAulas = aulas.map(aula => aula.min); // arrow function 
 
-const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
-console.log(instrumentos.sort()); // it will reorganize the array in alphabetic order
+// const nomeAulas = aula => aula.nome; // arrow function 
 
-const idades = [43,54,6,2,3,54,57,5,9];
-console.log(idades.sort()); // it will organize the first from left to right - the less significant to the more significant number /
-                            // sort method 
+// const nomeAulas2 = function(aula) {
+//     return aula.nome;
+// };
 
+// const arrayNomeAulas = aulas.map(nomeAulas2); // ***
 
-// array.unshift();
+// console.log(arrayNomeAulas);
 
-const cores = ['Azul', 'Vermelho', 'Amarelo'];
-console.log(cores.unshift('Rosa', 'Branco')); // returns the array length
-console.log(cores); // returns the array items - unshift method add them at the beginning
+// console.log(tempoAulas);
 
 
 
-// array.shift();
 
-console.log(cores.shift()); // removes the first item and it is the return 
+// [].REDUCE returns a UNIQUE value of the final iteration - it has an accumulator -
+// If the accumulator is not defined, the method will consider it as the first item of the array
+// So, there will be a decrease of 1 iteration:
 
+// const aulas = [10, 25, 30];
 
+// const reduceAulas = aulas.reduce((accumulator, item) => {
+//     console.log(accumulator, item);
+//     return accumulator + item;
+// });
 
-// array.push();
+// console.log(reduceAulas);
 
-cores.push('Preto'); // returns the array length
-console.log(cores); // returns the array items - push method add them at the end
+// But when defined, it will iterate the exact same amount of items in the array
 
+// const reduceAulas2 = aulas.reduce((accumulator, item) => {
+//     console.log(accumulator, item);
+//     return accumulator + item;
+// }, 0);
 
-// array.pop();
+// console.log(reduceAulas2);
 
-console.log(cores.pop()); // removes the last item and it is the return
 
 
 
-//array.reverse();
+// const numeros = [12,43,546,57,45,34,233];
 
-console.log(cores.reverse()); // inversion of array items
+// const maiorNumero = numeros.reduce((anterior, atual) => {
+//     return anterior > atual ? anterior : atual;
+// }, 0);
 
+// console.log(maiorNumero);
 
-//array.splice(index, remove, items);
 
-const carros2 = [ 'Ford', 'Fiat', 'VW', 'Honda'];
-carros2.splice(1, 0, 'Kia', 'Mustang'); // returns []
-console.log(carros); // ['Ford', 'Kia', 'Mustang', 'Fiat', 'VW', 'Honda'];
 
-// [ ].splice(index that indicates where the values will start to be added, 
-//            remove of the total amount given in the second parameter)
 
-carros.splice(3, 2, 'Ferrari'); // ['Fiat', 'VW'] => they are after the addition of 'Ferrari' and correspond to the two removes indicated at the second parameter
+// const aulas = [     
+//     {
+//         nome: 'HTML 1',
+//         min: 15
+//     },
+//     {
+//         nome: 'HTML 2',
+//         min: 10
+//     },
+//     {
+//         nome: 'CSS 1',
+//         min: 20
+//     },
+//     {
+//         nome: 'JS 1',
+//         min: 25
+//     },
+// ]
 
-console.log(carros); // ['Ford', 'Kia', 'Mustang', 'Ferrari', 'Honda'];
+// const listaAulas = aulas.reduce((accumulator, aula, index) => { // aula === item
+//     accumulator[index] = aula.nome;
+//     return accumulator;
+// }, {});
 
+// How the reduce method create this object: 
 
+// //1.
+// aulas.reduce(({}, {nome: 'HTML 1', min: 15}, 0) => {
+//     {}[0] = 'HTML 1';
+//     return {0: 'HTML 1'};
+// }, {});
 
-//array.copyWithin(target, where it will begin to copy, ultil where it will copy);
+// //2.
+// aulas.reduce(({0: 'HTML 1'}, {nome: 'HTML 2', min: 10}, 1) => {
+//     {0: 'HTML 1'}[1] = 'HTML 2';
+//     return {0: 'HTML 1', 1: 'HTML 2'};
+// }, {});
 
-console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].copyWithin(2, 0, 2));
+// //3.
+// aulas.reduce(({0: 'HTML 1', 1: 'HTML 2'}, {nome: 'CSS 1', min: 20}, 2) => {
+//     {0: 'HTML 1', 1: 'HTML 2'}[2] = 'CSS 1';
+//     return  {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1'};
+// }, {});
 
-console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].copyWithin(-1)); // a negative number makes it starts the substitution from the end
+// //4.
+// aulas.reduce(({0: 'HTML 1', 1: 'HTML 2', 3: 'CSS 1'}, {nome: 'JS 1', min: 25}, 3) => {
+//     {0: 'HTML 1', 1: 'HTML 2', 3: 'CSS 1'}[3] = 'JS 1';
+//     return {0: 'HTML 1', 1: 'HTML 2', 2: 'CSS 1', 3: 'JS 1'};
+// }, {});
 
 
 
-//arary.fill(value that will replace the items, index of where it will begin the replace, index of where the replace stops)
+// [].reduceRight ==> iteration occurs from right to left!
 
 
+// // [].some(); ==> if AT LEAST ONE return is truthy, returns true 
+// const frutas = ['Banana', 'Pêra', 'Uva']; 
 
-console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor'));
-console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor', 2));
-console.log(['Item1','Item2', 'Item3', 'Item4', 'Item5'].fill('Amor', 1, 3));
+// const temUva = frutas.some((item) => {
+//     console.log(item);
+//     return item === 'Uva';
+// }); 
 
 
-// ------------------------------------------------------------------------------------------
 
 
+// [].every(); ==> if ALL the returns are truthy, returns true. If at least one of it is falsy, returns false
 
 
+// const numeros = [3,3,3,2];
 
+// const maiorQue3 = numeros.every( n => n > 3);
+// console.log(maiorQue3);
 
 
 
 
-// *** Access methods ***
+// [].findIndex() ==> returns the value of the first iteration that returns true
+// [].find() ==> returns the index of the first iteration that returns true
 
-// Differently from the mutator methods, they don't modify the original array
-// Access methods only returns the modified value
+// const numerosMaior3 = numeros.findIndex(n => n > 1);
+// console.log(numerosMaior3);
 
+// const numerosMaior2 = numeros.find(n => n > 1);
+// console.log(numerosMaior3);
 
-//array.concat()
 
-const transportes1 = ['Barco', 'Avião'];
-const transportes2 = ['Carro', 'Moto'];
-const transportes = transportes1.concat(transportes2);
-console.log(transportes); 
 
-const maisTransportes = [].concat(transportes1, transportes2, 'Van');
-console.log(maisTransportes);
 
-//array.includes(value that will be searched inside the array) -> boolean
-//array.indexOf(value that will be searched inside the array, return the first one found) -> return it's position
-//array.lastIndexOf(value that will be searched inside the array, return the last one found) -> return it's position
 
 
-//array.join(separator) => join all the values from the array and returns a string with them. 
-                        // if a parameter if given, it will be used at the joing of each item form the array
+// [].filter(); ==> returns an array with a list of the values that returned true
 
 
-let htmlString = '<h1>Título secundário</h1>'
+// const numeros = [ 45,65,6,3,42,5,76,44,6456,67,4343,54,657,6,53,432,4243]
 
-htmlString = htmlString.split('h1');
-console.log(htmlString);
 
-htmlString = htmlString.join('h2');
-console.log(htmlString);
+// const buscaMaior200 = numeros.filter(n => n > 200);
 
 
-// array.slice();
 
-const linguagens = ['html', 'css', 'js', 'php', 'python'];
+// const aulas = [     
+//     {
+//         nome: 'HTML 1',
+//         min: 15
+//     },
+//     {
+//         nome: 'HTML 2',
+//         min: 10
+//     },
+//     {
+//         nome: 'CSS 1',
+//         min: 20
+//     },
+//     {
+//         nome: 'JS 1',
+//         min: 25
+//     },
+// ]
 
-const cloneLinguagens = linguagens.slice(); // to effectively clone .slice() is necessary because it will give the variable the return of the array
 
-console.log(linguagens.pop());
-console.log(linguagens);
+// const aulasMaiores15 = aulas.filter((aula) => {
+//     return aula.min > 15;
+// });
 
-console.log(cloneLinguagens);
+// console.log(aulasMaiores15);
+
+
+
+
+
+
+
+
+
