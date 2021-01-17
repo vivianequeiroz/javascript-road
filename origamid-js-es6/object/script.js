@@ -80,3 +80,37 @@ Object.defineProperties(moto, {
 
 
 console.log(moto);
+
+
+
+
+//  *********** OBJECT.getOwnPropertyDescriptor/s() ***********
+//  List all methods and properties from an object, as well as it's configurations 
+// ~
+
+Object.getOwnPropertyDescriptors(moto); 
+
+//  *********** OBJECT.keys() ***********
+//  *********** OBJECT.values() ***********
+//  *********** OBJECT.entries() ***********
+// All these methods returns an array with the info in it's names 
+// ~ Only works with enumerable!
+
+//  *********** OBJECT.getOwnPropertyNames() ***********
+// List in an array all the properties from the object
+// ~ Works with non enumerable too!
+
+//  *********** OBJECT.getPrototypeOf() ***********
+// => returns the constructor function of the object
+// ~ 
+
+//  *********** OBJECT.is() ***********
+// => verify if the objects are equal
+// ~ 
+
+//  *********** OBJECT.FREEZE() ***********
+// => don't allow any deletions, changes of additions
+//  *********** OBJECT.SEAL() ***********
+// => don't allow any addition or changes 
+//  *********** OBJECT.PREVENTEXTENSION() ***********
+// => don't allow any additions 
