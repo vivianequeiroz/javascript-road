@@ -1,116 +1,41 @@
+// EXERCISES
 
-// // *********** OBJECT.CREATE() ***********
-// // => returns a new object that will has as a prototype the object from the first argument
-// // ~ alternative way to build a new object without using a constructor function 
+// Create a function that verify data type 
 
-// const carro1 = {
-//     rodas: 4,
-//     init(valor) {
-//         this.marca = valor;
-//         return this;
-//     },
-//     acelerar() {
-//         return this.marca + ' acelerou';
-//     },
-//     buzinou() {
-//         return this.marca + ' buzinou';
-//     },
-// }
-
-// const honda = Object.create(carro1).init('Honda');;
-
-// // honda.marca = 'Honda';
-
-// // honda.init(honda);
-
-// const ferrari = Object.create(carro1).init('Ferrari');
-
-
-
-
-// // *********** OBJECT.ASSIGN() ***********
-// // => add a target at the first parameter (that will be modified) properties and methods from other objects 
-// // ~ 
-
-// const funcaoAutomovel = {
-//     acelerar() {
-//         return 'acelerou';
-//     },
-//     buzinar() {
-//         return 'buzinou';
-//     },
-// }
-
-// const moto = {
-//     rodas: 2,
-//     capacete: true,
-// }
-
-// const carro = {
-//     rodas: 4,
-//     cinto: true,
-// }
-
-// Object.assign(moto, funcaoAutomovel);
-// Object.assign(carro, funcaoAutomovel);
-
-
-
-//  *********** OBJECT.DEFINEPROPERTIES() ***********
-//  => turns the properties of an object immutable
-//  ~ 
-
-const moto = {
-    capacete: true,
+function verificarDado(dado) {
+    return Object.prototype.toString.call(dado);
 }
 
-Object.defineProperties(moto, {
-    rodas: {
-        // value: 2,
-        // configurable: false,
-        // writable: true,
-        get() {
-            return this._rodas;
-        },
-        set(valor){ 
-            this._rodas = valor * 4;
-        }
+console.log(verificarDado('String'));
+
+
+// Create an object quadrado with properties lados and turn it into immutable
+
+const quadrado = {};
+
+Object.defineProperties(quadrado, {
+    lados: {
+        value: 4,
+        enumerable: true,
     }
-});
+})
+
+console.log(quadrado);
 
 
-console.log(moto);
+// Prevent any changes in the objects below
+
+const configuracao = {
+    width: 800,
+    height: 600,
+    background: '#333',
+}
+ 
+Object.freeze(configuracao);
 
 
+// List the name of all properties from the prototype of String and Array
 
+console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(Object.getOwnPropertyNames(Array.prototype));
 
-//  *********** OBJECT.getOwnPropertyDescriptor/s() ***********
-//  List all methods and properties from an object, as well as it's configurations 
-// ~
-
-Object.getOwnPropertyDescriptors(moto); 
-
-//  *********** OBJECT.keys() ***********
-//  *********** OBJECT.values() ***********
-//  *********** OBJECT.entries() ***********
-// All these methods returns an array with the info in it's names 
-// ~ Only works with enumerable!
-
-//  *********** OBJECT.getOwnPropertyNames() ***********
-// List in an array all the properties from the object
-// ~ Works with non enumerable too!
-
-//  *********** OBJECT.getPrototypeOf() ***********
-// => returns the constructor function of the object
-// ~ 
-
-//  *********** OBJECT.is() ***********
-// => verify if the objects are equal
-// ~ 
-
-//  *********** OBJECT.FREEZE() ***********
-// => don't allow any deletions, changes of additions
-//  *********** OBJECT.SEAL() ***********
-// => don't allow any addition or changes 
-//  *********** OBJECT.PREVENTEXTENSION() ***********
-// => don't allow any additions 
