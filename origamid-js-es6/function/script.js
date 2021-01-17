@@ -51,3 +51,16 @@ Math.max.apply(null, numeros);
 Math.max.call(null, 3, 4, 5, 6 ,7, 20);
 
 // null can be passed to this in case the function do not use the main object to work 
+
+
+
+// BIND -> arguments can be passed only at the function runtime  
+
+function imc(altura, peso) {
+    return peso / (altura * altura);
+}
+
+const imc180 = imc.bind(null, 1.80);
+
+imc( 1.80, 70); // 21.6
+imc190(70); // 21.6
