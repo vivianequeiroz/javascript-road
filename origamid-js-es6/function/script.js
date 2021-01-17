@@ -1,66 +1,44 @@
-// function somar(n1, n2) {
-//     return n1 + n2;
-// }
-
-// console.log(somar.length); // property that returns the total of arguments
-// console.log(somar.name); // property that returns function's name
+//EXERCISEs
 
 
+//1. Return the total sum of characters using reduce
 
-// *** M  ain methods ***
+const totalP = document.querySelectorAll('p');
 
-// CALL
+const totalCaracteres = Array.prototype.reduce.call(totalP, (accumulator, item) =>{
+    const caracteres = item.innerText.length;
+    return accumulator + caracteres;
+}, 0);
 
-// const carro = {
-//     marca: 'Ford',
-//     ano: 2018,
-// }
-
-// function descricaoCarro(velocidade) {
-//     console.log(this);
-//     console.log(this.marca + ' ' + this.ano + velocidade); //this makes a reference to the object Window, since it was not defined by us and it is the general object of the browser 
-// }
-
-// descricaoCarro.call({marca: 'Honda', ano: 2015},  100)
-
-// function.call(additon of new objects, addit ion of parameters);
-
-
-
-
-const li = document.querySelectorAll('li');
-
-const filtro = Array.prototype.filter.call(li, (item) => { // it allow the use of filter (Array method) without transforming it into an Array in another variable
-    return item.classList.containes('ativo');
-});
-
-console.log(filtro); 
-
-console.log(li);
+console.log(totalP);
+console.log(totalCaracteres);
 
 
 
 
 
-//APPLY - works as call, but the arguments of the function are passed through an array
+//2. Create an element that return new html elements with the following parameters:
+// tag, classe and conteudo
 
-
-const numeros = [3, 4, 6, 1, 43, 44, 32];
-
-Math.max.apply(null, numeros);
-Math.max.call(null, 3, 4, 5, 6 ,7, 20);
-
-// null can be passed to this in case the function do not use the main object to work 
-
-
-
-// BIND -> arguments can be passed only at the function runtime  
-
-function imc(altura, peso) {
-    return peso / (altura * altura);
+function criarElemento(tag, classe, conteudo) {
+    const elemento = document.createElement(tag);
+    classe ? elemento.classList.add(classe): null;
+    conteudo ? elemento.innerHTML = conteudo : null;
+    return elemento;
 }
 
-const imc180 = imc.bind(null, 1.80);
+console.log(criarElemento('li', 'azul', 'Este é o conteúdo!'));
 
-imc( 1.80, 70); // 21.6
-imc190(70); // 21.6
+
+
+//3. Create a new function using the last one as a base
+// This new function should always create h1 with the classe titulo
+// However, the conteudo paraemeter remains dinamic 
+
+const h1Titulo = criarElemento.bind(null, 'h1', 'titulo');
+
+const cursosJS = h1Titulo('Cursos de JavaScript');
+const cursosHTML = h1Titulo('Cursos de HTML');
+
+
+console.log(cursosJS, cursosHTML)
