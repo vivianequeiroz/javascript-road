@@ -1,40 +1,57 @@
-                    // ***** Data Attributes *****
+//EXERCISES
+
+// Add an attribute data=anime"show-down"and 
+// data=anime"show=-right" to all the description animals sections
+
+
+// 1: add of attributes mentioned at HMTL
+
+// 2: at animacoes-1.js, inside the activeTab function, creation of:
+// const direcao = tabContent[index].dataset.anime
+// console.log(direcao);
+// tabContent[index].classList.add('ativo', direcao);
+
+//3: At CSS, changes and additions at the tab following styles: 
+// .js-tabcontent section.ativo {
+//     display: block !important;
+// }
+
+// .js-tabcontent section.ativo.show-right {
+//     animation: show-right .5s forwards;
+// }
+
+// .js-tabcontent section.ativo.show-down {
+//     animation: show-down .5s forwards;
+// }
+
+// @keyframes show-right {
+//     from {
+//         opacity: 0;
+//         transform: translate3d(-30px, 0, 0);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translate3d(0, 0, 0);
+//     }
+// } 
+
+// @keyframes show-down {
+//     from {
+//         opacity: 0;
+//         transform: translate3d(0, -30px, 0);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translate3d(0, 0, 0);
+//     }
+// }
 
 
 
-// const h1 = document.querySelector('h1');
+//2. Substitute all the classes js- to data attributes
 
-// console.log(h1);
-// console.log(Object.prototype.toString.call(h1));
-
-
-// console.log(h1.dataset);
-
-// There are 3 ways we can access data attributes:
-
-let div = document.querySelector('div');
-div = document.querySelector('[data-cor]');
-div = document.querySelector('[data-cor="azul"]');
-
-console.log(div.dataset.cor);
-
-
-div.dataset.height = 1000;
-console.log(div.dataset);
-
-delete div.dataset.height;
-console.log(div.dataset);
-
-
-
-// The attributes and values that starts with "data-" can
-// be used as a way to config plugins and DOM/JS interactions
-
-// Why data and not class?
-// The advantage in using data attributes is that they turn it 
-// more easier to avoid CSS styles conflicts.
-// Moreover, data attributes makes the tag more organized.
-
-// Nomenclature
-// At the HTML element - dash-separated name
-// At JS manipulation - camel Case 
+// 1. At the HTML add of attributes
+// 2. Substitute the attribute's names at the JS interactions
+// 3. Substitute the attribute's names at the CSS

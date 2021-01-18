@@ -15,9 +15,8 @@
     </title>
 </head>
 <body>
-    <div data-cor="azul">Uma div :)</div>
 
-    <nav class="menu js-menu">
+    <nav class="menu" data-menu="suave">
         <ul>
             <li><a href="#animais">Animais</a></li>
             <li><a href="#faq">Faq</a></li>
@@ -26,9 +25,9 @@
         </ul>
     </nav>
 
-    <section class="grid-section animais js-scroll" id="animais">
+    <section class="grid-section animais" data-anime="scroll" id="animais">
         <h1 class="titulo">Animais Fantásticos</h1>
-        <ul class="animais-lista js-tabmenu">
+        <ul class="animais-lista" data-tab="menu">
             <li><img src="./css/img/imagem1.jpg" alt="Foto raposa vermelha"></li>
             <li><img src="./css/img/imagem2.jpg" alt="Foto esquilo"></li>
             <li><img src="./css/img/imagem3.jpg" alt="Foto urso-pardo"></li>
@@ -37,8 +36,8 @@
             <li><img src="./css/img/imagem6.jpg" alt="Foto leão"></li>
         </ul>
         
-        <div class="animais-descricao js-tabcontent">
-            <section>
+        <div class="animais-descricao" data-tab="content">
+            <section data-anime="show-right">
                 <h2>Raposa vermelha</h2>
                 <p>
                     A raposa-vermelha (Vulpes vulpes) é a maior das raposas verdadeiras e um dos membros de maior distribuição
@@ -56,7 +55,7 @@
                 </p>
             </section>
                 
-            <section>
+            <section data-anime="show-right">
                 <h2>Esquilo</h2>
                 <p>
                     Os esquilos pertencem a uma grande família de mamíferos roedores, de pequeno e médio porte, conhecida como
@@ -75,7 +74,7 @@
                 </p>
             </section>
                 
-            <section>
+            <section data-anime="show-right">
                 <h2>Urso-pardo</h2>
                 <p>
                     O urso-pardo (Ursus arctos) é um mamífero carnívoro da família dos ursídeos. É o urso de mais ampla distribuição
@@ -95,7 +94,7 @@
                 </p>
             </section>
 
-            <section>
+            <section data-anime="show-down">
                 <h2>Lobo</h2>
                 <p>
                     O lobo (também chamado de lobo-cinzento; nome científico: Canis lupus) é uma espécie de mamífero canídeo do gênero
@@ -113,7 +112,7 @@
                 </p>
             </section>
                 
-            <section>
+            <section data-anime="show-down">
                 <h2>Macaco</h2>
                 <p>
                     Macaco é um termo de origem africana (provavelmente do banto makako) utilizado como designação comum a
@@ -130,7 +129,7 @@
                 </p>
             </section>
                 
-            <section>
+            <section data-anime="show-right">
                 <h2>Leão</h2>
                 <p>
                     O leão [feminino: leoa] (nome científico: Panthera leo) é uma espécie de mamífero carnívoro do gênero Panthera e da
@@ -153,9 +152,9 @@
             
     </section>
 
-    <section class="grid-section faq js-scroll" id="faq">
+    <section class="grid-section faq" data-anime="scroll" id="faq">
         <h1 class="titulo">FAQ</h1>
-        <dl class="faq-lista js-accordion">
+        <dl class="faq-lista" data-anime="accordion">
             <dt>Qual a idade dos animais?</dt>
             <dd>Em média, a raposa vive de 2 a 5 anos, esquilos de 6 a 10 anos, um urso de 20 a 25 anos, lobos de 6 a 8 anos,
                 macacos de 20 a 45 anos e leões de 10 a 14 anos.</dd>
@@ -175,7 +174,7 @@
         </dl>
     </section>
             
-    <section class="grid-section contato js-scroll" id="contato">
+    <section class="grid-section contato" data-anime="scroll" id="contato">
         <h1 class="titulo">Contato</h1>
         <div class="mapa"></div>
             <img src="./css/img/mapa.png" alt="Imagem mapa">
@@ -192,7 +191,7 @@
         <p>Todos os direitos reservados.</p>
     </footer>
     
-    <script src="./animacoes.js"></script>
+    <script src="./animacoes-1.js"></script>
     <script src="./script.js"></script>
     </body>
     </html>
