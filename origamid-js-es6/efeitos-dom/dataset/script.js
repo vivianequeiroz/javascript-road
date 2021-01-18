@@ -54,4 +54,3 @@
 
 // 1. At the HTML add of attributes
 // 2. Substitute the attribute's names at the JS interactions
-// 3. Substitute the attribute's names at the CSS
