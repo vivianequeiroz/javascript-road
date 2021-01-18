@@ -9,7 +9,6 @@
             behavior: 'smooth',
             block: 'start',
         });
-
         // => Alternative form: 
         // const topo = section.offsetTop;
         // window.scrollTo({
