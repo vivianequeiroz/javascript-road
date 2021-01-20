@@ -13,9 +13,13 @@ ul {
 }
 
 body {
-    background-color: #faf6ed;
+    background-color: rgb(249, 188, 98);
     color: #222;
     -webkit-font-smoothing: antialiased;
+}
+
+body.active {
+    background-color: red;
 }
 
 .grid-container {

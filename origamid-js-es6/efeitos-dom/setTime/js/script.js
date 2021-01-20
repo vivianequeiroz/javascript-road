@@ -1,82 +1,59 @@
-import initScrollSuave from './modules/scroll-suave.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
-import initAccordion from './modules/accordion.js';
-import initTabNav from './modules/tabnav.js';
-import initModal from './modules/modal.js';
-import initTooltip from './modules/tooltip.js';
+//EXERCISES SETTIMEOUT E SETINTERVAL
 
+//1. Change the color of the screen to blue e then to red every two seconds
 
-initScrollSuave();
-initAnimacaoScroll();
-initAccordion();
-initTabNav();
-initModal();
-initTooltip();
+//  w r o n g 
+// const blueBody = document.getElementById('body').style.background = 'blue';
 
-
-// function espera(texto) {
-//     console.log('Passou 0s');
+// function mudarClasse() {
+//     document.body.classList.toggle('active');
+//     const redBody = document.getElementById('body').style.background = 'red';
 // }
 
-// setTimeout(() => {
-//     console.log('Testando');
-// }, 0);
-
-//setTimeOut always wait for the call stack be empty 
-
-//If a seTimeout is used in a loop, all of them will be added into the Web Api 
-//almost in the same time. An setTimeout event do not wait the time from the previous one end to begin
+// setInterval(mudarClasse, 2000);
 
 
-// setTimeOut is a method from the Window object. So, when using "this" the reference 
-// will be the Window and errors can occur due to it.
+// c o r r e c t
 
-// Example:
-
-// const btn = document.querySelector('button');
-// btn.addEventListener('click', handleClick);
-
-// function handle click(event) {
-//    setTimeout(function()) {
-//        this.classList.add('active');
-//}, 1000)
+// function mudarClasse() {
+//     document.body.classList.toggle('active');
 // }
 
-// The example above will generate an error because this is a reference of Window object.
-
-// To correct this, it is necessary to use --- arrow functions --- they make a reference to the parent of the object 
-
-// function handle click(event) {
-//    setTimeout(() => { 
-//        this.classList.add('active');
-//}, 1000); 
-// }
+// setInterval(mudarClasse, 200);
 
 
 
 
 
-// -----------------------------------------------------------------------
 
-// function loop(texto) {
-//     console.log(texto);
-// }
 
-// let i = 0;
-// setInterval(() => {
-//     console.log(i++);
-// }, 500);
+// 2. Create a chronometer with that can be started, paused and reset 
 
-// setInterval makes a continuous loop 
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar');
+const tempo = document.querySelector('.tempo');
 
-// to stop it, it is necessary to put setInterval in a variable!!
 
-const contarAte10 = setInterval(callback, 1000);
+iniciar.addEventListener('click', iniciarTempo);
+pausar.addEventListener('click', pausarTempo);
+pausar.addEventListener('dblclick', resetarTempo);
 
 let i = 0;
-function callback() {
-    console.log(i++);
-    if (i > 10) {
-        clearInterval(contarAte10);
-    }
+let timer;
+
+function iniciarTempo() {
+    timer = setInterval(() => {
+        tempo.innerText = i++;
+    }, 100);
+    iniciar.setAttribute('disabled', '');
+}
+
+function pausarTempo() {
+    clearInterval(timer);
+    iniciar.removeAttribute('disabled');
+}
+
+function resetarTempo() {
+    tempo.innerText = 0;
+    i = 0;
 }
