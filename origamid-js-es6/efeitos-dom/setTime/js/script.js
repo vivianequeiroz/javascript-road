@@ -14,13 +14,13 @@ initModal();
 initTooltip();
 
 
-function espera(texto) {
-    console.log('Passou 0s');
-}
+// function espera(texto) {
+//     console.log('Passou 0s');
+// }
 
-setTimeout(() => {
-    console.log('Testando');
-}, 0);
+// setTimeout(() => {
+//     console.log('Testando');
+// }, 0);
 
 //setTimeOut always wait for the call stack be empty 
 
@@ -51,3 +51,32 @@ setTimeout(() => {
 //        this.classList.add('active');
 //}, 1000); 
 // }
+
+
+
+
+
+// -----------------------------------------------------------------------
+
+// function loop(texto) {
+//     console.log(texto);
+// }
+
+// let i = 0;
+// setInterval(() => {
+//     console.log(i++);
+// }, 500);
+
+// setInterval makes a continuous loop 
+
+// to stop it, it is necessary to put setInterval in a variable!!
+
+const contarAte10 = setInterval(callback, 1000);
+
+let i = 0;
+function callback() {
+    console.log(i++);
+    if (i > 10) {
+        clearInterval(contarAte10);
+    }
+}
