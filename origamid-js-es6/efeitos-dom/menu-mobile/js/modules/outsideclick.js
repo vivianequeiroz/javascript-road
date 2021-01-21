@@ -5,8 +5,8 @@ export default function outsideClick(element, events, callback) {
     
     if(!element.hasAttribute(outside)) {
         events.forEach(userEvent => {
-            html.addEventListener(userEvent, handleOutsideClick);
-        })
+            setTimeout(() => {html.addEventListener(userEvent, handleOutsideClick)})
+        }); // prevent the Bubble at the html event that prevented the menu to disable
         element.setAttribute(outside, '');
     }
 

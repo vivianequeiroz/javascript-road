@@ -20,18 +20,25 @@
         position: relative;
         z-index: 300;
     } 
+
     .js [data-menu="button"]::before {
         margin-right: 4px;
-
+        
         content: '';
         display: inline-block;
         height: 2px;
         width: 12px;
         background: #FFF;
-        box-shadow: 0 4px #FFF, 0 -4px #FFF;
+        box-shadow: 0 3px #FFF, 0 -3px #FFF;
+        transition: transform .3s;
     }
+
+    .js [data-menu="button"].active::before {
+        transform: rotate(90deg);
+    }
+
     .js [data-menu="list"] {
-        display: block;
+        display: none;
         position: absolute;
         background: #FB5;
         width: 160px;
@@ -40,9 +47,14 @@
         padding: 60px 0 20px 0;
         box-shadow: 2px 2px 2px 0 rgba(0, 0,0,.2);
     }
+
+    .js [data-menu="list"].active {
+        display: block;
+        animation: show-right .3s forwards;
+    }
     .js .dropdown-menu {
         position: static;
         border: none;
         /* make dropdown menu do not get on top of the other menu options*/
     }
-    }
+}
