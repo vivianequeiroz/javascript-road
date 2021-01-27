@@ -1,6 +1,8 @@
 const contato = document.querySelector('#contato');
-console.log(contato.elements.nome);
-console.log(document.forms[0]);
+// console.log(contato.elements.nome);
+// console.log(document.forms[0]);
+const texto = document.querySelector('.texto');
+
 
 
 // Values 
@@ -9,7 +11,19 @@ console.log(document.forms[0]);
 // 'change' observe the value inserted by the user when he channges the field 
 
 function handleKeyup(event) {
-    console.log(event.target.value);
+
+    document.body.style.backgroundColor = event.target.value;
+    // const target = event.target;
+
+    // if(!target.checkValidity()) {
+    //     target.setCustomerValidity('Esse campo é importante. Não deixe de preencher!');
+    //     target.classList.add('invalido');
+    //     target.nextElementSibling.innerText = target.ValidationMessage;
+    // }
+    
+    // console.log(event.target.checkValidity());
+    // console.log(event.target.value);
+    // texto.innerText = event.target.value;
 }
 
 // contato.addEventListener('keyup', handleKeyup);

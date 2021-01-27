@@ -11,10 +11,17 @@
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome">
         <label for="email">E-mail</label>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" required>
+        <span class="erro"></span>
         <label for="mensagem">Mensagem</label>
         <textarea name="textarea" id="textarea"></textarea>
+
+        <select name="cores" id="cores">
+            <option value="blue">Azul</option>
+            <option value="red">Vermelhor</option>
+        </select>
     </form>
+    <span class="texto"></span>
     
     <script src="./forms.js"></script>
 </body>

@@ -21,6 +21,9 @@ input, textarea {
 }
 
 textarea {
-    height: 150px;
-    
+    height: 150px;   
+}
+
+.invalido {
+    border-color: red;
 }
