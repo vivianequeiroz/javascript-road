@@ -11,7 +11,7 @@ form {
     margin: 0 auto;
 }
 
-input, textarea {
+input[type="text"], textarea {
     width: 100%;
     box-sizing: border-box;
     padding: .5rem;

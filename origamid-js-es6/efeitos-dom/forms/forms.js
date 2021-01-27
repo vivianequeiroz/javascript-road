@@ -10,9 +10,14 @@ const texto = document.querySelector('.texto');
 // 'keyup' observe key per key typed by the user
 // 'change' observe the value inserted by the user when he channges the field 
 
-function handleKeyup(event) {
-
-    document.body.style.backgroundColor = event.target.value;
+// function handleKeyup(event) {
+//     if(event.target.checked) {
+//         console.log(event.target.checked)
+//     }
+    
+    // console.log(event.target.value);    
+    
+    // document.body.style.backgroundColor = event.target.value;
     // const target = event.target;
 
     // if(!target.checkValidity()) {
@@ -24,10 +29,16 @@ function handleKeyup(event) {
     // console.log(event.target.checkValidity());
     // console.log(event.target.value);
     // texto.innerText = event.target.value;
-}
+// }
 
 // contato.addEventListener('keyup', handleKeyup);
 // keyup does not detect voice input data, so change can 
 // be used to overocome this problem and make the form more accessible:
 
-contato.addEventListener('change', handleKeyup);
+const dados = {};
+
+function handleChange(event){
+    dados[event.target.name] = event.target.value;
+}
+
+contato.addEventListener('change', handleChange);
