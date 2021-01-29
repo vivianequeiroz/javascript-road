@@ -69,7 +69,47 @@ const retorno = promessa2
 // Independently of being resolved or reject, finally executes the anonymous function passed
 .finally(() => {
     console.log('Fim');
+    console.log('*');
+    console.log('*');
+    console.log('*');
+    console.log('*');
+    console.log('*');
 })
 
 console.log(retorno);
+
+
+
+// Promise.all()
+// Returns a new promise if:
+// I. All the promises inside if are resolved
+//                       or 
+// II. At leat one of them is rejected
+
+// Promise.race()
+// Returns a new promise at the moment the first promise is resolved or rejected
+// This new promise brings the response of the first one resolved
+
+
+const login = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve('Usuário logado');
+    }, 1000);
+});
+
+const dados = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve('Dados carregados');
+    }, 1500);
+});
+
+// const tudoCarregado = Promise.all([login, dados]);
+const tudoCarregado = Promise.race([login, dados]);
+
+console.log(tudoCarregado);
+
+tudoCarregado.then((resolucao) => {
+    console.log(resolucao); // returns an array
+});
+
 
