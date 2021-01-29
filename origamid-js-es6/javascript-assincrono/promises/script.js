@@ -53,5 +53,23 @@ const retorno = promessa2
 .then(resolucao => {
     console.log(resolucao);
 })
+// catch() 
+// Adds a callback at the promise when it is rejected
+.catch(rejeitadada =>{
+    console.log(rejeitada);
+})
+// then()
+// By adding at the second argument, then can also be used when a promise is rejected
+.then(resolucao => {
+    console.log(resolucao);
+}, reject => {
+    console.log(reject);
+})
+// finally()
+// Independently of being resolved or reject, finally executes the anonymous function passed
+.finally(() => {
+    console.log('Fim');
+})
 
 console.log(retorno);
+
