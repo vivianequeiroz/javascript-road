@@ -48,14 +48,28 @@
 // //     conteudo.appendChild(css)
 // // })
 
-const sobre = fetch('./sobre.html');
+// const sobre = fetch('./sobre.html');
 
-const div = document.createElement('div');
+// const div = document.createElement('div');
 
-sobre.then(r => r.text())
+// sobre.then(r => r.text())
+// .then(body => {
+//     console.log(body);
+//     div.innerHTML = body;
+//     const titulo = div.querySelector('h1');
+//     document.querySelector('h1').innerText = titulo.innerText;
+// });
+
+
+
+// .blob()
+
+const imagem = fetch('./screenshot.png');
+
+imagem.then(r => r.blob())
 .then(body => {
-    console.log(body);
-    div.innerHTML = body;
-    const titulo = div.querySelector('h1');
-    document.querySelector('h1').innerText = titulo.innerText;
-});
+    const blobUrl = URL.createObjectURL(body);
+    console.log(blobUrl);
+    const imagemDom = document.querySelector('img');
+    imagemDom.src = blobUrl;
+})
