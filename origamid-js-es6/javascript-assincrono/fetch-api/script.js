@@ -103,3 +103,8 @@ const cep = fetch('https://viacep.com.br/ws/05853390/json/');
 cep.then(response => {
     response.headers.forEach(console.log);
 });
+
+
+// .status => return a codde status from the request
+// .ok => return a boolean value. True for success and false for failure
+
