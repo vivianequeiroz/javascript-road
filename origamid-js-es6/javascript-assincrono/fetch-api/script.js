@@ -62,14 +62,34 @@
 
 
 
-// .blob()
+// .blob() => to transform data that js does not support like images
 
-const imagem = fetch('./screenshot.png');
+// const imagem = fetch('./screenshot.png');
 
-imagem.then(r => r.blob())
-.then(body => {
-    const blobUrl = URL.createObjectURL(body);
-    console.log(blobUrl);
-    const imagemDom = document.querySelector('img');
-    imagemDom.src = blobUrl;
-})
+// imagem.then(r => r.blob())
+// .then(body => {
+//     const blobUrl = URL.createObjectURL(body);
+//     console.log(blobUrl);
+//     const imagemDom = document.querySelector('img');
+//     imagemDom.src = blobUrl;
+// });
+
+
+
+// .clone() => make it possible to manipulate in two different ways the result of a fetch: 
+
+const cep = fetch('https://viacep.com.br/ws/05853390/json/');
+
+cep.then(r => {
+    const r2 = r.clone();
+    r.text.then((text)=> {
+        console.log(text);
+    })
+    r2.jason().then((json) => {
+        console.log(json);
+    })
+    console.log(r);
+    })
+    .then(body => {
+     console.log(body);
+});
