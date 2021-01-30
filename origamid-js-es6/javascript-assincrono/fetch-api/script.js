@@ -78,18 +78,28 @@
 
 // .clone() => make it possible to manipulate in two different ways the result of a fetch: 
 
+// const cep = fetch('https://viacep.com.br/ws/05853390/json/');
+
+// cep.then(r => {
+//     const r2 = r.clone();
+//     r.text.then((text)=> {
+//         console.log(text);
+//     })
+//     r2.jason().then((json) => {
+//         console.log(json);
+//     })
+//     console.log(r);
+//     })
+//     .then(body => {
+//      console.log(body);
+// });
+
+
+
+//.headers => a property that has the header request in which it is possible to iterate over them
+
 const cep = fetch('https://viacep.com.br/ws/05853390/json/');
 
-cep.then(r => {
-    const r2 = r.clone();
-    r.text.then((text)=> {
-        console.log(text);
-    })
-    r2.jason().then((json) => {
-        console.log(json);
-    })
-    console.log(r);
-    })
-    .then(body => {
-     console.log(body);
+cep.then(response => {
+    response.headers.forEach(console.log);
 });
