@@ -1,3 +1,15 @@
+.container {
+    background: rgb(157, 196, 157);
+    border-radius: 7px;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 body {
     background: rgb(113, 175, 113);
     width: 100vw;
@@ -18,7 +30,7 @@ body {
 #text {
     font-size: .875rem;
     font-family: monospace;
-    background-color: bisque;
+    background-color: rgb(240, 205, 162);
 
     border-radius: 5px;
     border: none;
