@@ -14,4 +14,6 @@ function fetchBtc() {
     });
 }
 
-fetchBtc();
+// setInterval(fetchBtc(), 1000 * 30);
+
+// fetchBtc();
