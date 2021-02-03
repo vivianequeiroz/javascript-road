@@ -29,6 +29,7 @@ const configuracoes = {
 
 const stringConfig = JSON.stringify(configuracoes);
 // console.log(stringConfig);
+// creating an object: 
 
 
 localStorage.config = JSON.stringify(configuracoes);
