@@ -3,12 +3,20 @@
 // async => assyncronous parts that must need resolved before continue with the function 
 // await => indicates the promise we must wait for being resolved (ES8 feature)
 
+// try and catch => visualize errors
+
+
 async function puxarDados() {
-    const dadosObjetoResponse = await fetch('./dados.json');
-    console.log(dadosObjetoResponse);
-    const dadosJSON = await dadosObjetoResponse.json();
-    console.log(dadosJSON);
-    documeent.body.innerText = dadosJSON.titulo;
+    try {
+        const dadosObjetoResponse = await fetch('./dados.json');
+        // console.log(dadosObjetoResponse);
+        const dadosJSON = await dadosObjetoResponse.json();
+        // console.log(dadosJSON);
+        documeent.body.innerText = dadosJSON.titulo;
+     } catch(erro) {
+         console.log(erro);
+     }
+   
 }
 
 puxarDados();
