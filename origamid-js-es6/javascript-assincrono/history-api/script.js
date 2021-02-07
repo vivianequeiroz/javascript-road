@@ -33,6 +33,7 @@ function handleClick(event) {
 }
 
 async function fetchPage(url) {
+    document.querySelector('.content').innerHTML = 'Carregando';
     const pageResponse = await fetch(url);
     const pageText = await pageResponse.text();
     // console.log(pageText);
