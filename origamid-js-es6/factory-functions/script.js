@@ -1,39 +1,59 @@
-"use strict"
+function $$(selectedElements) {
+    const elements = document.querySelectorAll(selectedElements);
 
-// Functions that return an object without the necessity of using the new word
+    function hide() {
+        elements.forEach(element => {
+            element.style.display = 'none';
+        });
+        return this; // allow the chain of other methods 
+    }
 
+    function show() {
+        elements.forEach(element => {
+            element.style.display = 'initial';
+        });
+        return this; // allow the chain of other methods 
+    }
 
-function createButton(text) {
+    function on(onEvent, callback) {
+        elements.forEach(element => {
+            element.addEventListener(onEvent, callback)
+        });
+        return this; // allow the chain of other methods 
+    }
 
-    function element() {
-        const buttonElement = document.createElement('button');
-        buttonElement.innerText = text;
-        return buttonElement;
+    function addClass(className) {
+        elements.forEach(element => {
+            element.classList.add(className);
+        });
+        return this; // allow the chain of other methods 
+    }
+  
+    function removeClass(className) {
+        elements.forEach(element => {
+            element.classList.remove(className);
+        });
+        return this; // allow the chain of other methods 
     }
 
     return {
-        text,
-        element
+        elements,
+        hide,
+        show,
+        on,
+        addClass,
+        removeClass
     }
 }
 
-const btnBuy = createButton('Buy');
-const btnSell = createButton('Sell');
+const btns = $$('button');
 
-// It allow the creation of private methods and variables
-// Object.freeze
+console.log(btns.hide().show());
 
-function Person(name) {
-    if(!(this instanceof Person)) {
-        return new Person(name);
-    }
-    this.name = name;
+
+function handleClick(event) {
+    console.log(event.target);
 }
 
-Person.prototype.walk = function() {
-    return `${this.name} andou`;
-}
-
-const programmerStudent = Person('Viviane');
-
-console.log(programmerStudent)
+btns.on('click', handleClick);
+btns.addClas('active');

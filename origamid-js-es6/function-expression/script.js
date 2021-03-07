@@ -31,4 +31,3 @@ var instrument = 'Guitar';
 // () => immediate activation
 
 console.log(instrument); // Guitar
-
