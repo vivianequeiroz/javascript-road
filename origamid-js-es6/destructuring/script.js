@@ -52,3 +52,21 @@ console.log(firstItem, secondItem);
 
 
 
+// Argument destructuring
+// If an function receive an object as an argument 
+// it can be destructuring at the declaration:
+
+// Without destructuring:
+// function handleKeyboard(event) {
+//     console.log(event.key);
+// }
+
+// document.addEventListener('keyup', handleKeyboard);
+
+// With destructuring:
+
+function handleKeyboard({key, keyCode}) {
+    console.log(key, keyCode);
+}
+
+document.addEventListener('keyup', handleKeyboard);
