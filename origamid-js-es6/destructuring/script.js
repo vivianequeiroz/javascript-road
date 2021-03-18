@@ -24,3 +24,11 @@ let inactiveCourse = 'HTML';
 [activeCourse, inactiveCourse] = [inactiveCourse, activeCourse]
 
 console.log(activeCourse, inactiveCourse);
+
+const dog = {
+    name: 'Bob',
+    breed: 'Labrador',
+    color: 'Yellow'
+}
+
+const {color: bobColor} = dog; 
