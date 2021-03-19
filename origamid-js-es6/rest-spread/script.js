@@ -13,6 +13,7 @@ function calcPerimeter(side, totalSides = 4) {
 calcPerimeter(10);
 calcPerimeter(10, 4, 20);
 
+
 // 2. Rest Parameter
 
 // By using ... in front of a parameter, all the arguments given at the function activation will be
