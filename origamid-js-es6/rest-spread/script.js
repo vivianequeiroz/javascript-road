@@ -26,5 +26,21 @@ function winnersAnnoucement(...winners) {
         console.log(winner + ' won =D')
     });
 }
-
 winnersAnnoucement('João', 'Sofia', 'Rita');
+
+
+const winners = ['João', 'Sofia', 'Rita'];
+winnersAnnoucement('Carro',...winners);
+
+
+const totalNumbers = [3,45,4,5,8,98,7,7,8,25];
+const maxNumber = Math.max(...totalNumbers);
+
+console.log(maxNumber);
+
+
+// It is possible to create an array by using spread if there are iterable items
+
+const btns = document.querySelectorAll('button'); // NodeList
+
+const btnsArray = [...btns]; // Array
