@@ -18,3 +18,4 @@ console.log(newPhrase);
 // /\w/: selects alphanumeric characters and the /\d/: select all digits -- \W and \D selects their opposite
 // \s/: selects all white spaces
 // Quantifier: /i{2, 3}/ - search for the total character(s) incidence 
+  
