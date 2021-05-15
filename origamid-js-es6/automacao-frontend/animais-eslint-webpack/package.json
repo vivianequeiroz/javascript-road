@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "webpack --mode development js/script.js --o ./main.js"
+    "build-dev": "webpack --mode development --watch js/script.js --o ./main.js"
   },
   "author": "",
   "license": "ISC",
