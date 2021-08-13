@@ -51,5 +51,5 @@ console.log(car.move());
 ////<prototype>: Car { … }
 
 const shallowCloneCar = { ...car };
-console.log(shallowCloneCar);
+console.log(shallowCloneCar );
 //<prototype>: Object { … }
