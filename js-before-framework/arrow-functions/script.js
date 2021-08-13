@@ -13,7 +13,7 @@ class Menu {
     this.activeClass = "active";
   }
   addActiveEvent() {
-    // sem o arrow function ele não iria funcionar
+    // a callback function here woud create a new this that references 'this.menuElment' so it could not access the value of this.activeClass from the menu object
     this.menuElement.addEventListener("click", (event) =>
       event.target.classList.add(this.activeClass)
     );
