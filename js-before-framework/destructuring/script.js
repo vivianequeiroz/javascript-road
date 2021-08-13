@@ -17,6 +17,14 @@ console.log(fruit1, fruit2);
 //fruits remain the same
 console.log(fruits);
 
-
 document.documentElement.addEventListener("mousemove", handleMouseMove);
 //document.documentElement.addEventListener("mousemove", handleMouseMove2);
+
+const useState = [
+  "red",
+  function (color) {
+    useState[0] = color;
+  },
+];
+
+const [color, setColor] = useState;
