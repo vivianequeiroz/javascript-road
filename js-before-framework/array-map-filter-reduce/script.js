@@ -29,5 +29,11 @@ const prices = [
 // });
 
 const pricesFilter = prices.filter((price) =>  price.includes("R$"));
-
+console.log("Filter:")
 console.log(pricesFilter);
+
+// ******* MAP *******
+// Apply an action for each item of the array selected
+const pricesNumbers = pricesFilter.map((price) => +price.replace("R$", ""));
+console.log("Map:")
+console.log(pricesNumbers);
