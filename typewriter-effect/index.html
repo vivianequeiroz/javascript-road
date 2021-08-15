@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TypeWriter in JavaScript</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background: #0e1013;
+      }
+      h1 {
+        max-width: 480px;
+        text-align: center;
+        margin: 22% auto;
+        font-family: "Courier New", Courier, monospace;
+        color: #fff;
+      }
+
+      h1::after {
+        content: "|";
+        margin-left: 5px;
+        opacity: 1;
+        animation: blink .7s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <h1>Front-end development is cool!</h1>
+
+    <script src="script.js"></script>
+  </body>
+</html>
