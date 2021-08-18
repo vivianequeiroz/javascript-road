@@ -33,7 +33,7 @@ console.log(result);
 //   return price * (1 + tax);
 // }
 
-
+//curring
 function finalPrice(tax) {
   return function(price) {
     return price * (1 + tax);
