@@ -17,7 +17,7 @@ run(function () {
   console.log("Run!");
 });
 
-//existing functions of JS can be passed too
+//existing functions of JS can be passed as a parameter too
 const result = run(Math.random); //without the return value at run() it returns
                                 // undefined
 console.log(result);
